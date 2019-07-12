@@ -4,8 +4,19 @@ import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
-import { database } from '@mauromadeit/vue-commons'
-const db = new database({ ref: 'navigate-miami' })
+var firebaseConfig = {
+  apiKey: "AIzaSyALKjlGhPZ3hDZmG6Gbjr74SmY7EzFFX8U",
+  authDomain: "navigatemakerspaces.firebaseapp.com",
+  databaseURL: "https://navigatemakerspaces.firebaseio.com",
+  projectId: "navigatemakerspaces",
+  storageBucket: "",
+  messagingSenderId: "538454503822",
+  appId: "1:538454503822:web:7f0bf488ff207c6c"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database()
+const db = new database({ ref: 'navigatemakerspaces' })
 
 function pop(key) {
   return (state, payload) => state[key].pop(payload)

@@ -1,7 +1,7 @@
 module.exports = {
   lintOnSave: false,
   configureWebpack: cfg => {
-     cfg.output.publicPath = "navigate-miami-map"
+     cfg.output.publicPath = "navigate-map"
   },
   outputDir: 'docs',
 }
